@@ -6,7 +6,7 @@ Kiểu dữ liệu động khia báo bằng let hoặc var từ ES6 trở đi n�
 Hằng thì không thể gán lại dữ liệu
 ### Js kiểu dữ liệu
 Có 8 kiểu dữ liệu trong Js đó là:
-String, Number, Boolean, Object, Null, Undefined,
+String, Number, Boolean, Object, Null, Undefined,  
 Symbol là kiểu dữ liệu đặc biệt
 ```// two symbols with the same description
 
