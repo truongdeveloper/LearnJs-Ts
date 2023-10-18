@@ -1,0 +1,19 @@
+# Ôn lại kiến thức Javascript:
+
+### Js biến
+Kiểu dữ liệu động khia báo bằng let hoặc var từ ES6 trở đi nên sử dụng let
+đặt tên biến không được để chữ số đứng đầu
+Hằng thì không thể gán lại dữ liệu
+### Js kiểu dữ liệu
+Có 8 kiểu dữ liệu trong Js đó là:
+String, Number, Boolean, Object, Null, Undefined,
+Symbol là kiểu dữ liệu đặc biệt
+```// two symbols with the same description
+
+const value1 = Symbol('hello');
+const value2 = Symbol('hello');
+
+console.log(value1 === value2); // false```
+
+
+
