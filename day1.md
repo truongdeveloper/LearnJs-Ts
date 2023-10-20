@@ -187,7 +187,7 @@ Do White
     // do...while loop from 1 to 5
     do {
         console.log(i);
-        i++;
+        i++
     } while(i <= n);
 ```
 
@@ -303,3 +303,5 @@ Bai tap thực hành
 
 ## Object trong JS
 
+
+Trong object thì thuộc tính là các trường có kiểu dữ liệu còn các Function là các phương thức
