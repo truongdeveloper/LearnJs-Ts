@@ -297,7 +297,7 @@ prototype	allows the addition of properties to Number objects
 
 ## Symbol trong Js
 
-JavaScript ES6 đã giới thiệu một kiểu dữ liệu nguyên thủy mới được gọi là Symbol. Các ký hiệu là bất biến (không thể thay đổi) và là duy nhất
+JavaScript ES6 đã giới thiệu một kiểu dữ liệu nguyên thủy mới được gọi là Symbol. Các ký hiệu là bất biến (không thể thay đổi) và là duy nhất, các Symbol là một loại dữ liệu đặc biệt được sử dụng để tạo các thuộc tính hoặc phương thức riêng tư trong các đối tượng, đặc biệt là trong trường hợp sử dụng Object literal notation
 
 ```
 // two symbols with the same description
@@ -342,3 +342,181 @@ for (let key in person) {
     tên
     tuổi
 ```
+Các phương thức Symbols
+
+```
+for()	Searches for existing symbols
+keyFor()	Returns a shared symbol key from the global symbol registry.
+toSource()	Returns a string containing the source of the Symbol object
+toString()	Returns a string containing the description of the Symbol
+valueOf()	Returns the primitive value of the Symbol object.
+```
+
+Các thuộc tính Symbol
+
+```
+asyncIterator	Returns the default AsyncIterator for an object
+hasInstance	Determines if a constructor object recognizes an object as its instance
+isConcatSpreadable	Indicates if an object should be flattened to its array elements
+iterator	Returns the default iterator for an object
+match	Matches against a string
+matchAll	Returns an iterator that yields matches of the regular expression against a string
+replace	Replaces matched substrings of a string
+search	Returns the index within a string that matches the regular expression
+split	Splits a string at the indices that match a regular expression
+species	Creates derived objects
+toPrimitive	Converts an object to a primitive value
+toStringTag	Gives the default description of an object
+description	Returns a string containing the description of the symbol
+```
+
+## Try Catch Finally Trong JS
+Những lỗi xảy ra trong thời gian chạy được gọi là ngoại lệ
+```
+try {
+    // body of try
+} 
+catch(error) {
+    // body of catch  
+}
+```
+
+*Finally*
+Dù chạy đúng hay sai thì mã lệnh trong final luôn được thực thi sau khôi try catch
+```
+const numerator= 100, denominator = 'a';
+
+try {
+     console.log(numerator/denominator);
+     console.log(a);
+}
+catch(error) {
+    console.log('An error caught'); 
+    console.log('Error message: ' + error);  
+}
+finally {
+     console.log('Finally will execute every time');
+}
+Kết quả
+
+NaN
+An error caught
+Error message: ReferenceError: a is not defined
+Finally will execute every time
+```
+
+Không bắt được lỗi trong các mã 'timed' ví dụ như trong setTimeout()  
+Khối try catch phải được đặt bên trong khối được tính giờ
+```
+setTimeout(function() {
+    try {
+        // error in the code
+    } catch {
+        console.log( "error is caught" );
+    }
+}, 3000);
+```
+
+*Thow*
+
+Câu lệnh thow kết hợp với Try Catch để tự định nghĩa các ngoại lệ để ném nó vào khối lệnh catch
+
+```
+const number = 40;
+try {
+    if(number > 50) {
+        console.log('Success');
+    }
+    else {
+
+        // user-defined throw statement
+        throw new Error('The number is low');
+    }
+
+    // if throw executes, the below code does not execute
+    console.log('hello');
+}
+catch(error) {
+    console.log('An error caught'); 
+    console.log('Error message: ' + error);  
+}
+
+Đã xảy ra lỗi
+Thông báo lỗi: Lỗi: Số lượng thấp
+
+Đoạn code trên khi number nhỏ hơn 51 thì Ném lỗi vào lệnh catch
+
+```
+
+## Module trong JS
+
+Khi chương trình của chúng tôi phát triển lớn hơn, nó có thể chứa nhiều dòng mã. Thay vì đặt mọi thứ vào một tệp duy nhất, bạn có thể sử dụng các mô-đun để phân tách mã trong các tệp riêng biệt theo chức năng của chúng. Điều này làm cho mã của chúng tôi có tổ chức và dễ bảo trì hơn.  
+
+Mô-đun là một tệp chứa mã để thực hiện một tác vụ cụ thể. Một mô-đun có thể chứa các biến, hàm, lớp, v.v  
+
+```
+// exporting a function
+export function greetPerson(name) {
+    return `Hello ${name}`;
+}
+
+
+```
+```
+// importing greetPerson from greet.js file
+import { greetPerson } from './greet.js';
+
+// using greetPerson() defined in greet.js
+let displayName = greetPerson('Jack');
+
+console.log(displayName); // Hello Jack 
+```
+
+*Renaming imports and exports(Đổi tên để tránh trường hợp import trùng tên biến)*
+
+```
+// renaming import inside module.js
+export {
+    function1 as newName1,
+    function2 as newName2
+};
+
+// when you want to use the module
+// import in the main file
+import { newName1, newName2 } from './module.js';
+```
+*Rename in the import file(Hoặc có thể thay đổi tên export để tránh trùnh tên biến)*
+
+```
+// inside module.js
+export {
+    function1,
+    function2
+};
+
+// when you want to use the module
+// import in the required file with different name
+
+import { function1 as newName1, function2 as newName2 } from './module.js';
+```
+
+*Default Export( Export mặc định)*
+
+```
+// default export
+export default function greet(name) {
+    return `Hello ${name}`;
+}
+
+export const age = 23;
+
+import random_name from './greet.js';
+```
+
+Tên ngẫu nhiênđược nhập khẩu từ greet.js. Vì, random_namekhông có trong greet.js, nên xuất mặc định ( greet()trong trường hợp này) được xuất dưới dạng random_name  
+1 tếp có thể export nhiều lần nhưng export default 1 lần duy nhất  
+
+Modules luôn luôn sử dụng mặc định Strict Mode (Chế độ nghiêm ngặt không cho truy cập biến trong tệp Module)  
+
+
+
