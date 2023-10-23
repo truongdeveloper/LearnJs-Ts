@@ -473,7 +473,24 @@ Map thường được sử dụng khi bạn cần duyệt qua các cặp khóa-
 
 Tương tự Map nhưng được lượt bớt 1 số Method  
 get(), set(), delete()và has()
-WeakMap khác với Map là không lặp được
+WeakMap khác với Map là không lặp qua được
+
+```
+const weakMap = new WeakMap();
+console.log(weakMap); // WeakMap {} 
+
+let obj = {};
+
+// adding object (element) to WeakMap
+weakMap.set(obj, 'hello');
+
+
+// looping through WeakMap
+for (let i of weakMap) {
+
+    console.log(i);  // TypeError
+}
+```
 
 ## Set trong JS
 

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES5",
+        "rootDir": "./typescript",
+        "outDir": "./dist",
+        "removeComments": true,
+  }
+}
