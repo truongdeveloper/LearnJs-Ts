@@ -26,15 +26,15 @@ class Person {
 }
 
 class Student extends Person {
-    constructor(name, age, school){
-        super(name, age)
+    constructor( school){
+        // super(name, age)
         this.school = school? school: 'Bỏ học'
     }
 
 }
 
-function log(...value){
-    console.log(...value)
+function log(){
+    console.log(...arguments)
 }
 
 let arrObject = [

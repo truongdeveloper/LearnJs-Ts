@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-        "module": "CommonJS",
-        "target": "ES5",
+        "module": "System",
+        "target": "ES6",
         "rootDir": "./typescript",
-        "outDir": "./dist",
+        "outDir": "./jsdemo",
         "removeComments": true,
   }
 }

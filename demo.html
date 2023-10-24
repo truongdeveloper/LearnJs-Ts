@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Demo</title>
+</head>
+<body>
+    <div class="seach dark-theme-light">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="seach-input dark-theme-light" id="find-country" placeholder="Seach for a country ...">
+        </div>
+    <div class="card-main" id="card-main"></div>
+    <div id="error-container">
+        <!-- Lỗi sẽ được hiển thị ở đây -->
+    </div>
+    <div class="loading" id="loading">
+
+    </div>
+    <script src="./jsdemo/system.min.js"></script>
+    <script>
+        System.import("./jsdemo/index.js");
+    </script>
+
+</body>
+</html>

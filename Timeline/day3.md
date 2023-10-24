@@ -181,7 +181,7 @@ output
 undefined
 Window {}
 ```
-Ở đây, this.agebên trong this.sayName()có thể truy cập được vì this.sayName()đây là phương thức của một đối tượng.  
+Ở đây, this.age bên trong this.sayName()có thể truy cập được vì this.sayName()đây là phương thức của một đối tượng.  
 
 Tuy nhiên,  innerFunc()đây là một chức năng bình thường và this.agekhông thể truy cập được vì this đề cập đến đối tượng chung (đối tượng Window trong trình duyệt). Do đó, this.agebên trong innerFunc()hàm cung cấp undefined
 **Arguments Binding**
