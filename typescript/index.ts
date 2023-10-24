@@ -1,7 +1,4 @@
-console.log('hihi')
+// Xử lý mảng
+import { arr } from "./data"
 
-let truong: string = 'hehe'
-
-const hihi = {
-    truong: truong,
-}
+console.log(arr.sort())

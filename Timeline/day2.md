@@ -138,6 +138,12 @@ console.log(Person.prototype);
 // inheriting the property from prototype
 console.log(person1.gender);
 console.log(person2.gender);
+
+Kết quả:
+
+{ gender: "male" }
+male
+male
 ```
 
 Nếu một đối tượng cố gắng truy cập cùng một thuộc tính có trong hàm khởi tạo và đối tượng nguyên mẫu, thì đối tượng đó sẽ lấy thuộc tính từ hàm khởi tạo
