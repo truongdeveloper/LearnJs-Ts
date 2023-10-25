@@ -50,7 +50,14 @@ System.register(["./contant.js", "./getAPI.js"], function (exports_1, context_1)
             findCountry = document.getElementById("find-country");
             findCountry.onchange = function () {
                 let keyword = findCountry.value;
-                getAPI_js_1.getData(contant_js_1.URL_SEARCH(keyword)).then(dataAPI => {
+                let url;
+                if (keyword == '') {
+                    url = contant_js_1.URL_ALL_COUNTRY;
+                }
+                else {
+                    url = contant_js_1.URL_SEARCH(keyword);
+                }
+                getAPI_js_1.getData(url).then(dataAPI => {
                     let data = dataAPI.map((item) => {
                         return [
                             item.flags.svg,

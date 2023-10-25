@@ -40,7 +40,7 @@ System.register([], function (exports_1, context_1) {
                     if (errorContainer) {
                         const errorElement = document.createElement('div');
                         errorElement.className = 'error';
-                        errorElement.innerHTML = `<strong>${this.title}:</strong> ${this.message}`;
+                        errorElement.innerHTML = `<Strong>${this.title}:</Strong> ${this.message}`;
                         errorContainer.appendChild(errorElement);
                         errorContainer.classList.add('show');
                         setTimeout(() => {

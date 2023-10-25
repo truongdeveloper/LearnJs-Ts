@@ -15,16 +15,18 @@ System.register(["./contant.js"], function (exports_1, context_1) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let response = yield fetch(url);
+                console.log(response);
                 if (!response.ok) {
-                    throw new contant_js_1.ErrorCustom("Lỗi gọi API", "Không lấy được dữ liệu");
+                    throw new contant_js_1.ErrorCustom("Lỗi gọi API", "404 Not Found ");
                 }
                 else {
                     let data = yield response.json();
+                    console.log(data);
                     return data;
                 }
             }
             catch (error) {
-                throw new contant_js_1.ErrorCustom("Lỗi gọi API", "Không lấy được dữ liệu");
+                throw new contant_js_1.ErrorCustom("Lỗi gọi API", error.message);
             }
         });
     }

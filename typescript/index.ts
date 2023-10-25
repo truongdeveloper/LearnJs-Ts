@@ -1,4 +1,4 @@
-import { URL_ALL_COUNTRY, URL_SEARCH } from "./contant.js";
+import { ErrorCustom, URL_ALL_COUNTRY, URL_SEARCH } from "./contant.js";
 import { getData } from "./getAPI.js";
 
 
@@ -44,8 +44,14 @@ function loadData(dataEx: any) {
 const findCountry = document.getElementById("find-country") as HTMLInputElement
 findCountry.onchange = function() {
   let keyword: string = findCountry.value
+  let url: string;
+  if(keyword == ''){
+    url = URL_ALL_COUNTRY;
+  }else{
+    url = URL_SEARCH(keyword)
+  }
 
-  getData(URL_SEARCH(keyword)).then(dataAPI => {
+  getData(url).then(dataAPI => {
     let data = dataAPI.map((item) => {
         return [
             item.flags.svg,

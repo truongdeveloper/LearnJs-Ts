@@ -4,14 +4,16 @@ import { DataItem } from "./types.js"
 async function getAPI(url: string) {
     try{
         let response = await fetch(url)
+        console.log(response)
         if(!response.ok){
-            throw new ErrorCustom("Lỗi gọi API", "Không lấy được dữ liệu")
+            throw new ErrorCustom("Lỗi gọi API", "404 Not Found ")
         }else{
             let data = await response.json()
+            console.log(data)
             return data
         }
     }catch(error){
-        throw new ErrorCustom("Lỗi gọi API", "Không lấy được dữ liệu")
+        throw new ErrorCustom("Lỗi gọi API", error.message)
     }
 }
 
