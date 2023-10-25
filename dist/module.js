@@ -26,8 +26,8 @@ class Person {
 }
 
 class Student extends Person {
-    constructor( school){
-        // super(name, age)
+    constructor(name, age, school){
+        super(name, age)
         this.school = school? school: 'Bỏ học'
     }
 

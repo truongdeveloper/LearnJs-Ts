@@ -35,13 +35,18 @@ System.register([], function (exports_1, context_1) {
                 }
                 ;
                 show() {
+                    console.error(this.message, this.stack);
                     const errorContainer = document.getElementById('error-container');
                     if (errorContainer) {
-                        console.error(this.message, this.stack);
                         const errorElement = document.createElement('div');
                         errorElement.className = 'error';
                         errorElement.innerHTML = `<strong>${this.title}:</strong> ${this.message}`;
                         errorContainer.appendChild(errorElement);
+                        errorContainer.classList.add('show');
+                        setTimeout(() => {
+                            errorContainer.classList.remove('show');
+                            errorContainer.removeChild(errorElement);
+                        }, 2000);
                     }
                 }
             };

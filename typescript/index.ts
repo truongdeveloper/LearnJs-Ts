@@ -22,7 +22,6 @@ AllCountry.then(dataAPI => {
 
 const cardMain = document.getElementById('card-main');
 
-
 function loadData(dataEx: any) {
     let html = [];
     for (let i = 0; i < dataEx?.length; i++) {
