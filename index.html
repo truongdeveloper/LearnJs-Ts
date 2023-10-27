@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Demo</title>
 </head>
 <body>
-    
-    <div id="error-container">
-        <!-- Lỗi sẽ được hiển thị ở đây -->
+    <div style="display: flex; justify-content: center;">
+        <div class="seach dark-theme-light">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="seach-input dark-theme-light" id="find-country" placeholder="Seach for a country ...">
+        </div>
     </div>
-    <script type="module" src="./dist/script.js"></script>
+    <div class="card-main" id="card-main"></div>
+    <div id="error-container" class="error-container">
+    </div>
+    <div class="loading" id="loading">
+
+    </div>
+    <script src="./jsdemo/system.min.js"></script>
+    <script>
+        System.import("./jsdemo/index.js");
+    </script>
+
 </body>
 </html>
